@@ -1,0 +1,19 @@
+name: Check code
+
+on: push
+
+jobs:
+  run-tests:
+    name: Run PHPUnit tests
+    runs-on: ubuntu-latest
+    container:
+      image: composer:latest
+      volumes:
+        - ${{ github.workspace }}:/app
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Installing composer dependencies
+        run: composer install
+      - name: Run tests
+        run: ./vendor/bin/phpunit tests

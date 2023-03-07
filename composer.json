@@ -1,0 +1,21 @@
+{
+  "description": "Simple way to make your text more typographer",
+  "license": "MIT",
+  "name": "fater/typograph",
+  "autoload": {
+    "psr-4": {
+      "Typography\\Src\\": "src/",
+      "Typography\\Tests\\DataProviders\\": "tests/DataProviders"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
+  "authors": [
+    {
+      "name": "Chaikin Evgenii",
+      "email": "fatermedia@yandex.com",
+      "homepage": "https://chaikin.info"
+    }
+  ]
+}
