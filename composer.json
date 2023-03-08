@@ -9,7 +9,8 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^9"
+    "phpunit/phpunit": "^9",
+    "nunomaduro/phpinsights": "^2.7"
   },
   "authors": [
     {
@@ -17,5 +18,12 @@
       "email": "fatermedia@yandex.com",
       "homepage": "https://chaikin.info"
     }
-  ]
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }
