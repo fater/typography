@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Tests\DataProviders;
+namespace Fater\Typography\Tests\DataProviders\Rules\Space;
 
-trait RuleRemoveSpaceBeforePunctuationsDataProvider
+trait RemoveSpaceBeforePunctuationsDataProvider
 {
     public function providerRule(): array
     {
