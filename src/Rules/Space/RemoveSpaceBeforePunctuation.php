@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Rules;
+namespace Fater\Typography\Src\Rules\Space;
+
+use Fater\Typography\Src\Rules\Rule;
 
 /**
  * Remove spaces before punctuations:
@@ -13,7 +15,7 @@ namespace Fater\Typography\Src\Rules;
  *  - question mark
  *  - exclamation mark
  */
-class RuleRemoveSpaceBeforePunctuation extends Rule
+class RemoveSpaceBeforePunctuation extends Rule
 {
     public function handle(string $text): string
     {

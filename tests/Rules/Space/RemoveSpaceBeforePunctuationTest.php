@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Tests;
+namespace Typography\tests\Rules\Space;
 
-use Fater\Typography\Src\Rules\RuleAddSpaceAfterComma;
-use Fater\Typography\Tests\DataProviders\RuleAddSpaceBeforeCommaDataProvider;
+use Fater\Typography\Src\Rules\Space\RemoveSpaceBeforePunctuation;
+use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceBeforePunctuationsDataProvider;
 use PHPUnit\Framework\TestCase;
 
-class RuleAddSpaceAfterCommaTest extends TestCase
+class RemoveSpaceBeforePunctuationTest extends TestCase
 {
-    use RuleAddSpaceBeforeCommaDataProvider;
+    use RemoveSpaceBeforePunctuationsDataProvider;
 
     /**
      * @dataProvider providerRule
@@ -22,7 +22,7 @@ class RuleAddSpaceAfterCommaTest extends TestCase
      */
     public function testRule(string $initialText, string $expectedText): void
     {
-        $rule = new RuleAddSpaceAfterComma();
+        $rule = new RemoveSpaceBeforePunctuation();
         $result = $rule->handle($initialText);
 
         $this->assertEquals($expectedText, $result);

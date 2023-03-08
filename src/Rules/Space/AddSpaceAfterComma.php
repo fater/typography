@@ -2,12 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Rules;
+namespace Fater\Typography\Src\Rules\Space;
+
+use Fater\Typography\Src\Rules\Rule;
 
 /**
  * Add space after comma
  */
-class RuleAddSpaceAfterComma extends Rule
+class AddSpaceAfterComma extends Rule
 {
     public function handle(string $text): string
     {
