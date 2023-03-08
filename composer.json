@@ -1,11 +1,15 @@
 {
   "description": "Simple way to make your text more typographer",
   "license": "MIT",
-  "name": "fater/typograph",
+  "name": "fater/typography",
   "autoload": {
     "psr-4": {
-      "Typography\\Src\\": "src/",
-      "Typography\\Tests\\DataProviders\\": "tests/DataProviders"
+      "Fater\\Typography\\Src\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fater\\Typography\\Tests\\DataProviders\\": "tests/DataProviders/"
     }
   },
   "require-dev": {

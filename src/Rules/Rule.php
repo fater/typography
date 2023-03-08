@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Typography\Src\Rules;
+namespace Fater\Typography\Src\Rules;
 
 abstract class Rule
 {

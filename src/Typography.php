@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Typography\Src;
+namespace Fater\Typography\Src;
 
+use Fater\Typography\Src\Rules\Rule;
 use RuntimeException;
-use Typography\Src\Rules\Rule;
 
 class Typography
 {

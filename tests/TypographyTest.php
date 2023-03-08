@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Typography\Tests;
+namespace Fater\Typography\Tests;
 
+use Fater\Typography\Src\Typography;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
-use Typography\Src\Typography;
 
 class TypographyTest extends TestCase
 {
