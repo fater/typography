@@ -6,10 +6,10 @@ namespace Fater\Typography\Src\Rules;
 
 abstract class Rule
 {
-    abstract public function handle(string $text): string;
-
     public function __toString(): string
     {
         return static::class;
     }
+
+    abstract public function handle(string $text): string;
 }

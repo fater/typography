@@ -51,7 +51,7 @@ return [
     */
 
     'exclude' => [
-        //  'path/to/directory-or-file'
+        'config',
     ],
 
     'add' => [
@@ -61,6 +61,7 @@ return [
     ],
 
     'remove' => [
+        NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
         SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class,
