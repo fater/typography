@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Fater\Typography\Src\Rules;
 
 /**
- * Add apace after comma
+ * Add space after comma
  */
 class RuleAddSpaceAfterComma extends Rule
 {
