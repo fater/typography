@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Typography\Src;
+namespace Fater\Typography\Src;
 
+use Fater\Typography\Src\Rules\Rule;
 use RuntimeException;
-use Typography\Src\Rules\Rule;
 
 class Typography
 {
     private array $handlers = [];
-    private string $payload = '';
+    private string $payload;
 
-    public static function init(): self
+    public function __construct(string $payload)
     {
-        return new self();
+        $this->payload = $payload;
     }
 
-    /**
-     * @param array $handlers
-     *
-     * @return $this
-     */
+    public static function init(string $payload): self
+    {
+        return new self($payload);
+    }
+
     public function addHandlers(array $handlers): self
     {
         $this->handlers = array_merge($this->handlers, $handlers);
@@ -29,32 +29,17 @@ class Typography
         return $this;
     }
 
-    /**
-     * @param string $payload
-     *
-     * @return $this
-     */
-    public function setText(string $payload): self
-    {
-        $this->payload = $payload;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function apply(): string
     {
         $payload = $this->payload;
         foreach ($this->handlers as $handler) {
             if (!class_exists($handler)) {
-                throw new RuntimeException("Class $handler not found");
+                throw new RuntimeException("Class {$handler} not found");
             }
 
-            $rule = new $handler;
+            $rule = new $handler();
             if (!$rule instanceof Rule) {
-                throw new RuntimeException("$handler isn't instance of Rule");
+                throw new RuntimeException("{$handler} isn't instance of Rule");
             }
 
             $payload = $rule->handle($payload);

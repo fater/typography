@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Typography\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Typography\Tests\DataProviders\RuleRemoveSpaceBeforePunctuationsDataProvider;
-use Typography\Src\Rules\RuleRemoveSpaceBeforePunctuation;
+use Fater\Typography\Tests\DataProviders\RuleRemoveSpaceBeforePunctuationsDataProvider;
+use Fater\Typography\Src\Rules\RuleRemoveSpaceBeforePunctuation;
 
 class RuleRemoveSpaceBeforePunctuationTest extends TestCase
 {

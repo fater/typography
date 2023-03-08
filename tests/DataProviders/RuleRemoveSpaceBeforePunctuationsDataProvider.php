@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Typography\Tests\DataProviders;
+namespace Fater\Typography\Tests\DataProviders;
 
 trait RuleRemoveSpaceBeforePunctuationsDataProvider
 {

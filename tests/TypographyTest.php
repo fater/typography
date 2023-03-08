@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Typography\Tests;
+namespace Fater\Typography\Tests;
 
+use Fater\Typography\Src\Typography;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
-use Typography\Src\Typography;
 
 class TypographyTest extends TestCase
 {
@@ -15,7 +15,7 @@ class TypographyTest extends TestCase
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Class invalidRuleClassName not found');
 
-        Typography::init()
+        Typography::init('')
             ->addHandlers(['invalidRuleClassName'])
             ->apply();
     }
@@ -23,9 +23,9 @@ class TypographyTest extends TestCase
     public function testApplyClassImplementsFailed(): void
     {
         $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Typography\Tests\TypographyTest isn\'t instance of Rule');
+        $this->expectExceptionMessage(self::class . ' isn\'t instance of Rule');
 
-        Typography::init()
+        Typography::init('')
             ->addHandlers([self::class])
             ->apply();
     }
