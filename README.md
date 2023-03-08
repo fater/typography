@@ -1,5 +1,7 @@
 ## Make your text tidier with - PHP Typography
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fater/typography/run-test.yml)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fater/typography)
 ![GitHub](https://img.shields.io/github/license/fater/typography)
 
 "Typography" is a PHP software that automatically edits your text, places spaces and corrects mechanical errors in the text. This service can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
