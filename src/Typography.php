@@ -24,7 +24,17 @@ class Typography
 
     public function addHandlers(array $handlers): self
     {
-        $this->handlers = array_merge($this->handlers, $handlers);
+        foreach ($handlers as $handler) {
+            if (class_exists($handler) === false) {
+                throw new RuntimeException("Class {$handler} not found");
+            }
+
+            if (is_subclass_of($handler, Rule::class) === false) {
+                throw new RuntimeException("{$handler} isn't instance of Rule");
+            }
+
+            $this->handlers[] = $handler;
+        }
 
         return $this;
     }
@@ -33,16 +43,7 @@ class Typography
     {
         $payload = $this->payload;
         foreach ($this->handlers as $handler) {
-            if (!class_exists($handler)) {
-                throw new RuntimeException("Class {$handler} not found");
-            }
-
-            $rule = new $handler();
-            if (!$rule instanceof Rule) {
-                throw new RuntimeException("{$handler} isn't instance of Rule");
-            }
-
-            $payload = $rule->handle($payload);
+            $payload = (new $handler())->handle($payload);
         }
 
         return $payload;
