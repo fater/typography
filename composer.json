@@ -29,5 +29,9 @@
       "composer/installers": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
+  },
+  "scripts": {
+    "tests": "./vendor/bin/phpunit tests",
+    "insights": "./vendor/bin/phpinsights --no-interaction --config-path=\"config/phpinsights.php\""
   }
 }

@@ -19,12 +19,12 @@ is not intended for use in production.
 
 ### Changelog:
 
-| Rule                                     | Status      |
-|------------------------------------------|:------------|
-| Add space after comma                    | Ready       |
-| Remove space before punctuation (.,:;?!) | Ready       |
-| Remove space in the end of text          | In progress |
-| First letter in uppercase                |             |
+| Rule                                     | Status |
+|------------------------------------------|:-------|
+| Add space after comma                    | Ready  |
+| Remove space before punctuation (.,:;?!) | Ready  |
+| Remove space in each paragraph           | Ready  |
+| First letter in uppercase                |        |
 
 ## Installation
 
