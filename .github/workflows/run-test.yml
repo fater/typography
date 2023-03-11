@@ -13,14 +13,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Installing composer dependencies
         run: composer install
 
       - name: Code analyze / PHP Insights
-        run: |
-          ./vendor/bin/phpinsights \
-          --no-interaction \
-          --config-path="config/phpinsights.php"
+        run: composer insights
 
       - name: Run tests
-        run: ./vendor/bin/phpunit tests
+        run: composer tests
