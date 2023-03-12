@@ -1,4 +1,4 @@
-## Make your text tidier with - PHP Typography
+# Make your text tidier with - PHP Typography
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fater/typography/run-test.yml)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fater/typography)
@@ -10,21 +10,17 @@ Using the "Typography" allows you to significantly reduce the time for correctin
 
 This can be especially useful for professional writers, journalists, advertisers and other people whose work is related to text content.
 
-## Ready to use and versioning
+## Table Of Contents
 
-Current dependency version is 0.1.0.
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Changelog](#changelog)
+- [License](#license)
 
-The software version is **under development** and in major version **0.x.x**
-is not intended for use in production.
+## Requirements
 
-### Changelog:
-
-| Rule                                     | Status |
-|------------------------------------------|:-------|
-| Add space after comma                    | Ready  |
-| Remove space before punctuation (.,:;?!) | Ready  |
-| Remove space in each paragraph           | Ready  |
-| First letter in uppercase                |        |
+- PHP 8.0 or higher
 
 ## Installation
 
@@ -42,7 +38,7 @@ To run "Typography" with default correction rules, use this code example:
 
 use Fater\Typography\Src\Typography;
 
-$formattedText = Typography::init('Your text')->apply();
+$formattedText = Typography::init()->apply('Your text');
 
 echo $formattedText;
 ```
@@ -74,9 +70,9 @@ Add your rule to the list of handlers to use it:
 
 use Fater\Typography\Src\Typography;
 
-$formattedText = Typography::init('Hello')
+$formattedText = Typography::init()
     ->addHandlers([YourOwnRule::class])
-    ->apply();
+    ->apply('Hello');
 
 echo $formattedText;
 ```
@@ -85,3 +81,26 @@ The above example will output:
 ```
 Hello World!
 ```
+
+## Roadmap
+
+Current version is 0.2.0.
+
+The software version is still **under development**.
+
+### Status of rules:
+
+- Space:
+  - [x] Add space after comma
+  - [x] Remove space before punctuation (.,:;?!)
+  - [x] Remove space in each paragraph
+- Letters:
+  - [ ] First letter in uppercase
+
+## Changelog
+
+Read [CHANGELOG](CHANGELOG.md) to know all product changes.
+
+## License
+
+License MIT, see more details in [LICENSE](LICENSE)
