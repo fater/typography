@@ -15,9 +15,9 @@ class TypographyTest extends TestCase
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Class invalidRuleClassName not found');
 
-        Typography::init('')
+        Typography::init()
             ->addHandlers(['invalidRuleClassName'])
-            ->apply();
+            ->apply('');
     }
 
     public function testApplyClassImplementsFailed(): void
@@ -25,8 +25,15 @@ class TypographyTest extends TestCase
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage(self::class . ' isn\'t instance of Rule');
 
-        Typography::init('')
+        Typography::init()
             ->addHandlers([self::class])
-            ->apply();
+            ->apply('');
+    }
+
+    public function testGetText(): void
+    {
+        $result = Typography::init()->apply(' text ');
+
+        $this->assertEquals(' text ', $result);
     }
 }
