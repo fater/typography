@@ -94,7 +94,9 @@ The software version is still **under development**.
   - [x] Add space after comma
   - [x] Remove space before punctuation (.,:;?!)
   - [x] Remove space in each paragraph
-- Letters:
+- Characters:
+  - [x] Replace special characters (c) (r) (tm) +- ([Rule examples in test](tests/Rules/Characters/ReplaceSpecialCharactersTest.php))
+  - [x] Replace dash
   - [ ] First letter in uppercase
 
 ## Changelog
