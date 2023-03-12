@@ -10,19 +10,21 @@ use RuntimeException;
 class Typography
 {
     private array $handlers = [];
-    private string $payload;
 
-    public function __construct(string $payload)
+    /**
+     * @return static
+     */
+    public static function init(): static
     {
-        $this->payload = $payload;
+        return new static();
     }
 
-    public static function init(string $payload): self
-    {
-        return new self($payload);
-    }
-
-    public function addHandlers(array $handlers): self
+    /**
+     * @param array $handlers
+     *
+     * @return $this
+     */
+    public function addHandlers(array $handlers): static
     {
         foreach ($handlers as $handler) {
             if (class_exists($handler) === false) {
@@ -39,13 +41,30 @@ class Typography
         return $this;
     }
 
-    public function apply(): string
+    /**
+     * Apply rules
+     *
+     * @param string $text
+     *
+     * @return string
+     */
+    public function apply(string $text): string
     {
-        $payload = $this->payload;
         foreach ($this->handlers as $handler) {
-            $payload = (new $handler())->handle($payload);
+            $text = $this->runRule(new $handler(), $text);
         }
 
-        return $payload;
+        return $text;
+    }
+
+    /**
+     * @param Rule $handler
+     * @param string $text
+     *
+     * @return string
+     */
+    protected function runRule(Rule $handler, string $text): string
+    {
+        return $handler->handle($text);
     }
 }
