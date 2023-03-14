@@ -35,6 +35,7 @@
   },
   "scripts": {
     "tests": "./vendor/bin/phpunit tests",
-    "insights": "./vendor/bin/phpinsights --no-interaction --config-path=\"config/phpinsights.php\""
+    "insights": "./vendor/bin/phpinsights --no-interaction --config-path=\"config/phpinsights.php\"",
+    "phpcs": "./vendor/bin/phpcs src --standard=PSR12"
   }
 }
