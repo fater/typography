@@ -85,7 +85,7 @@ Hello World!
 
 ## Roadmap
 
-Current version is 0.2.0.
+Current version is ![GitHub release](https://img.shields.io/github/v/release/fater/typography?display_name=release)
 
 The software version is still **under development**.
 
