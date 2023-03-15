@@ -34,7 +34,7 @@ class TypographyDebug extends Typography
     {
         $startTime = microtime(true) * 1000;
         $result = parent::runRule($handler, $text);
-        $this->steps[get_class($handler)] = floor((microtime(true) * 1000) - $startTime);
+        $this->steps[$handler::class] = floor((microtime(true) * 1000) - $startTime);
 
         return $result;
     }

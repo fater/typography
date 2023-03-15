@@ -67,6 +67,8 @@ return [
         SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class,
         SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class,
         SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class,
+        SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class,
+        SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class,
     ],
 
     'config' => [

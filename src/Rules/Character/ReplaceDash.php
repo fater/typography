@@ -14,7 +14,7 @@ class ReplaceDash extends Rule
     public function handle(string $text): string
     {
         return preg_replace(
-            "/( - )/",
+            '/( - )/',
             ' — ',
             $text
         );
