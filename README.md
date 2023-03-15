@@ -98,7 +98,7 @@ The software version is still **under development**.
 - Characters:
   - [x] Replace special characters (c) (r) (tm) +- ([Rule examples in test](tests/Rules/Characters/ReplaceSpecialCharactersTest.php))
   - [x] Replace dash
-  - [ ] First letter in uppercase
+  - [X] First letter in uppercase
 
 ## Changelog
 
