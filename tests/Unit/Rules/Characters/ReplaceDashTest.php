@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Typography\tests\Rules\Characters;
+namespace Fater\Typography\tests\Unit\Rules\Characters;
 
 use Fater\Typography\Src\Rules\Character\ReplaceDash;
 use PHPUnit\Framework\TestCase;

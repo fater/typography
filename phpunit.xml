@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        colors="true"
+        executionOrder="random"
+        failOnWarning="false"
+        failOnRisky="false"
+        failOnEmptyTestSuite="false"
+        beStrictAboutOutputDuringTests="true"
+        verbose="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix=".php">./tests/Unit/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
