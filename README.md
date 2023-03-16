@@ -5,6 +5,7 @@
 ![GitHub release](https://img.shields.io/github/v/release/fater/typography?display_name=release)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fater/typography)
 ![GitHub](https://img.shields.io/github/license/fater/typography)
+[![PHP Version Require](http://poser.pugx.org/fater/typography/require/php)](https://packagist.org/packages/fater/typography)
 
 "Typography" is a PHP software that automatically edits your text, places spaces and corrects mechanical errors in the text. This service can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
 
