@@ -1,6 +1,7 @@
 # Make your text tidier with - PHP Typography
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fater/typography/run-test.yml)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/fater/typography)
 ![GitHub release](https://img.shields.io/github/v/release/fater/typography?display_name=release)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fater/typography)
 ![GitHub](https://img.shields.io/github/license/fater/typography)
