@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Tests;
+namespace Fater\Typography\tests\Unit;
 
 use Fater\Typography\Src\Typography;
 use PHPUnit\Framework\TestCase;

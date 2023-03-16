@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Typography\tests\Rules\Space;
+namespace Fater\Typography\tests\Unit\Rules\Space;
 
-use Fater\Typography\Src\Rules\Space\RemoveSpaceInEachParagraph;
-use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceInEachParagraphDataProvider;
+use Fater\Typography\Src\Rules\Space\RemoveSpaceBeforePunctuation;
+use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceBeforePunctuationsDataProvider;
 use PHPUnit\Framework\TestCase;
 
-class RemoveSpaceInEachParagraphTest extends TestCase
+class RemoveSpaceBeforePunctuationTest extends TestCase
 {
-    use RemoveSpaceInEachParagraphDataProvider;
+    use RemoveSpaceBeforePunctuationsDataProvider;
 
     /**
      * @dataProvider providerRule
@@ -22,7 +22,7 @@ class RemoveSpaceInEachParagraphTest extends TestCase
      */
     public function testRule(string $initialText, string $expectedText): void
     {
-        $rule = new RemoveSpaceInEachParagraph();
+        $rule = new RemoveSpaceBeforePunctuation();
         $result = $rule->handle($initialText);
 
         $this->assertEquals($expectedText, $result);

@@ -2,22 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Typography\tests\Rules\Characters;
+namespace Fater\Typography\tests\Unit\Rules\Characters;
 
-use Fater\Typography\Src\Rules\Character\ReplaceSpecialCharacters;
+use Fater\Typography\Src\Rules\Character\FirstCapitalLetter;
+use Fater\Typography\Tests\DataProviders\Rules\Characters\FirstCapitalLetterDataProvider;
 use PHPUnit\Framework\TestCase;
 
-class ReplaceSpecialCharactersTest extends TestCase
+class FirstCapitalLetterTest extends TestCase
 {
-    public function providerRule(): array
-    {
-        return [
-            [
-                '(c) (r) (tm) +- brand',
-                '© ® ™ ± brand',
-            ]
-        ];
-    }
+    use FirstCapitalLetterDataProvider;
 
     /**
      * @dataProvider providerRule
@@ -29,7 +22,7 @@ class ReplaceSpecialCharactersTest extends TestCase
      */
     public function testRule(string $initialText, string $expectedText): void
     {
-        $rule = new ReplaceSpecialCharacters();
+        $rule = new FirstCapitalLetter();
         $result = $rule->handle($initialText);
 
         $this->assertEquals($expectedText, $result);
