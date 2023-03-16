@@ -30,7 +30,7 @@ class TypographyTest extends TestCase
             ->apply('');
     }
 
-    public function testGetText(): void
+    public function testApplySuccess(): void
     {
         $result = Typography::init()->apply(' text ');
 

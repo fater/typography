@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Fater\Typography\tests\Unit\Rules\Space;
 
 use Fater\Typography\Src\Rules\Space\RemoveSpaceBeforePunctuation;
-use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceBeforePunctuationsDataProvider;
+use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceBeforePunctuationDataProvider;
 use PHPUnit\Framework\TestCase;
 
 class RemoveSpaceBeforePunctuationTest extends TestCase
 {
-    use RemoveSpaceBeforePunctuationsDataProvider;
+    use RemoveSpaceBeforePunctuationDataProvider;
 
     /**
      * @dataProvider providerRule
