@@ -13,8 +13,8 @@ class ReplaceSpecialCharactersTest extends TestCase
     {
         return [
             [
-                '(c) (r) (tm) +- brand',
-                '© ® ™ ± brand',
+                '(c) (r) (tm) +- brand...',
+                '© ® ™ ± brand…',
             ]
         ];
     }

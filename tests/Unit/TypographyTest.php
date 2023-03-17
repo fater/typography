@@ -15,7 +15,7 @@ class TypographyTest extends TestCase
             ->apply('Neque porro quisquam,est qui dolorem ipsum, quia dolor sit amet,velit...');
 
         $this->assertEquals(
-            'Neque porro quisquam, est qui dolorem ipsum, quia dolor sit amet, velit...',
+            'Neque porro quisquam, est qui dolorem ipsum, quia dolor sit amet, velit…',
             $result
         );
     }
