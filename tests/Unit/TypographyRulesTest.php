@@ -35,9 +35,11 @@ class TypographyRulesTest extends TestCase
         $this->assertIsArray($result);
     }
 
-    public function testInitInstanceOfTypographyRulesClassSuccess(): void
+    public function testClearAllSuccess(): void
     {
-        $this->assertInstanceOf(TypographyRules::class, $this->typographyRules);
+        $result = $this->typographyRules->clearAll()->getRules();
+
+        $this->assertEquals([], $result);
     }
 
     public function setUp(): void
