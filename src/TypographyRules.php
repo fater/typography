@@ -56,12 +56,19 @@ final class TypographyRules
      *
      * @return $this
      */
-    public function addRules(array $handlers): static
+    public function addRules(array $handlers): self
     {
         foreach ($handlers as $handler) {
             $this->checkRule($handler);
             $this->rules[] = $handler;
         }
+
+        return $this;
+    }
+
+    public function clearAll(): self
+    {
+        $this->rules = [];
 
         return $this;
     }
