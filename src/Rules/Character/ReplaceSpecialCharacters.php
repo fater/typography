@@ -16,6 +16,7 @@ class ReplaceSpecialCharacters extends Rule
         '(r)' => '®',
         '(tm)' => '™',
         '+-' => '±',
+        '...' => '…',
     ];
 
     public function handle(string $text): string
