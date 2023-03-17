@@ -17,9 +17,9 @@ class TypographyDebug extends Typography
      */
     public function debugApply(string $text): array
     {
-        $startTime = microtime(true) * 1000;
+        $startTime = microtime(true);
         $this->apply($text);
-        $totalTime = floor((microtime(true) * 1000) - $startTime);
+        $totalTime = $this->calculateExecutionTime($startTime);
 
         return array_merge($this->steps, ['total' => $totalTime]);
     }
@@ -32,10 +32,20 @@ class TypographyDebug extends Typography
      */
     protected function runRule(Rule $handler, string $text): string
     {
-        $startTime = microtime(true) * 1000;
+        $startTime = microtime(true);
         $result = parent::runRule($handler, $text);
-        $this->steps[$handler::class] = floor((microtime(true) * 1000) - $startTime);
+        $this->steps[$handler::class] = $this->calculateExecutionTime($startTime);
 
         return $result;
+    }
+
+    /**
+     * @param float $startTime
+     *
+     * @return float
+     */
+    private function calculateExecutionTime(float $startTime): float
+    {
+        return round(microtime(true) - $startTime, 4);
     }
 }

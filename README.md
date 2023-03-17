@@ -1,17 +1,19 @@
-# Make your text tidier with - PHP Typography
+# Make your text tidier with PHP Typography
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fater/typography/run-test.yml)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/fater/typography)
 ![GitHub release](https://img.shields.io/github/v/release/fater/typography?display_name=release)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fater/typography)
 ![GitHub](https://img.shields.io/github/license/fater/typography)
+[![PHP Version Require](http://poser.pugx.org/fater/typography/require/php)](https://packagist.org/packages/fater/typography)
 
-"Typography" is a PHP software that automatically edits your text, places spaces and corrects mechanical errors in the text. This service can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
+"Typography" is a PHP software that automatically format your text, places spaces and corrects mechanical errors in the text. This service can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
 
 Using the "Typography" allows you to significantly reduce the time for correcting and formatting the text, since the service automatically processes all the necessary actions. In addition, "Typography" guarantees high accuracy and quality of correction, which helps to avoid punctuation errors.
 
 This can be especially useful for professional writers, journalists, advertisers and other people whose work is related to text content.
 
-## Table Of Contents
+# Table Of Contents
 
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -19,11 +21,11 @@ This can be especially useful for professional writers, journalists, advertisers
 - [Changelog](#changelog)
 - [License](#license)
 
-## Requirements
+# Requirements
 
 - PHP 8.0 or higher
 
-## Installation
+# Installation
 
 Install with composer:
 
@@ -31,7 +33,7 @@ Install with composer:
 composer install fater/typography
 ```
 
-## Usage
+# Usage
 
 To run "Typography" with default correction rules, use this code example:
 ```php
@@ -70,9 +72,12 @@ Add your rule to the list of handlers to use it:
 <?php
 
 use Fater\Typography\Src\Typography;
+use Fater\Typography\Src\TypographyRules;
 
-$formattedText = Typography::init()
-    ->addHandlers([YourOwnRule::class])
+// Add your rule to rules instance
+$rules = TypographyRules::init()->addRules([YourOwnRule::class]);
+
+$formattedText = Typography::init($rules) // Set rules instance with your rule
     ->apply('Hello');
 
 echo $formattedText;
@@ -87,7 +92,7 @@ Hello World!
 
 Current version is ![GitHub release](https://img.shields.io/github/v/release/fater/typography?display_name=release)
 
-The software version is still **under development**.
+The software version 0.x.x is still **under development**.
 
 ### Status of rules:
 
@@ -95,15 +100,17 @@ The software version is still **under development**.
   - [x] Add space after comma
   - [x] Remove space before punctuation (.,:;?!)
   - [x] Remove space in each paragraph
+  - [ ] Remove spaces in the beginning/ending of paragraph
+  - [ ] Remove redundant line breaks
 - Characters:
   - [x] Replace special characters (c) (r) (tm) +- ([Rule examples in test](tests/Rules/Characters/ReplaceSpecialCharactersTest.php))
   - [x] Replace dash
   - [X] First letter in uppercase
 
-## Changelog
+# Changelog
 
 Read [CHANGELOG](CHANGELOG.md) to know all product changes.
 
-## License
+# License
 
 License MIT, see more details in [LICENSE](LICENSE)

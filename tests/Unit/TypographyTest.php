@@ -6,34 +6,17 @@ namespace Fater\Typography\tests\Unit;
 
 use Fater\Typography\Src\Typography;
 use PHPUnit\Framework\TestCase;
-use RuntimeException;
 
 class TypographyTest extends TestCase
 {
-    public function testApplyClassExistsFailed(): void
+    public function testDebug(): void
     {
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('Class invalidRuleClassName not found');
+        $result = Typography::init()
+            ->apply('Neque porro quisquam,est qui dolorem ipsum, quia dolor sit amet,velit...');
 
-        Typography::init()
-            ->addHandlers(['invalidRuleClassName'])
-            ->apply('');
-    }
-
-    public function testApplyClassImplementsFailed(): void
-    {
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage(self::class . ' isn\'t instance of Rule');
-
-        Typography::init()
-            ->addHandlers([self::class])
-            ->apply('');
-    }
-
-    public function testApplySuccess(): void
-    {
-        $result = Typography::init()->apply(' text ');
-
-        $this->assertEquals(' text ', $result);
+        $this->assertEquals(
+            'Neque porro quisquam, est qui dolorem ipsum, quia dolor sit amet, velit...',
+            $result
+        );
     }
 }

@@ -5,44 +5,33 @@ declare(strict_types=1);
 namespace Fater\Typography\Src;
 
 use Fater\Typography\Src\Rules\Rule;
-use RuntimeException;
 
 class Typography
 {
-    private array $handlers = [];
+    /**
+     * @param TypographyRules|null $rules
+     */
+    public function __construct(private ?TypographyRules $rules)
+    {
+        if ($this->rules === null) {
+            $this->rules = new TypographyRules();
+        }
+    }
 
     /**
+     * Make Typography instance using static call
+     *
+     * @param TypographyRules|null $rules
+     *
      * @return static
      */
-    public static function init(): static
+    public static function init(?TypographyRules $rules = null): static
     {
-        return new static();
+        return new static($rules);
     }
 
     /**
-     * @param array $handlers
-     *
-     * @return $this
-     */
-    public function addHandlers(array $handlers): static
-    {
-        foreach ($handlers as $handler) {
-            if (class_exists($handler) === false) {
-                throw new RuntimeException("Class {$handler} not found");
-            }
-
-            if (is_subclass_of($handler, Rule::class) === false) {
-                throw new RuntimeException("{$handler} isn't instance of Rule");
-            }
-
-            $this->handlers[] = $handler;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Apply rules
+     * Format text with set rules
      *
      * @param string $text
      *
@@ -50,8 +39,8 @@ class Typography
      */
     public function apply(string $text): string
     {
-        foreach ($this->handlers as $handler) {
-            $text = $this->runRule(new $handler(), $text);
+        foreach ($this->rules->getRules() as $rule) {
+            $text = $this->runRule(new $rule(), $text);
         }
 
         return $text;
