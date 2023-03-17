@@ -72,9 +72,12 @@ Add your rule to the list of handlers to use it:
 <?php
 
 use Fater\Typography\Src\Typography;
+use Fater\Typography\Src\TypographyRules;
 
-$formattedText = Typography::init()
-    ->addHandlers([YourOwnRule::class])
+// Add your rule to rules instance
+$rules = TypographyRules::init()->addRules([YourOwnRule::class]);
+
+$formattedText = Typography::init($rules) // Set rules instance with your rule
     ->apply('Hello');
 
 echo $formattedText;
