@@ -112,10 +112,9 @@ The software version 0.x.x is still **under development**.
   - [x] Add space after comma
   - [x] Remove space before punctuation (.,:;?!)
   - [x] Remove space in each paragraph
-  - [ ] Remove spaces in the beginning/ending of paragraph
   - [ ] Remove redundant line breaks
 - Characters:
-  - [x] Replace special characters (c) (r) (tm) +- ...
+  - [x] Replace special characters (c), (r), (tm), +-, ..., <-, -> 
   - [x] Replace dash
   - [X] First letter in uppercase
 
