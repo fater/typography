@@ -74,6 +74,25 @@ final class TypographyRules
     }
 
     /**
+     * @param array $handlers
+     *
+     * @return $this
+     */
+    public function removeRules(array $handlers): self
+    {
+        foreach ($handlers as $handler) {
+            $this->checkRule($handler);
+        }
+
+        $this->rules = array_values(array_filter(
+            array_values($this->rules),
+            static fn ($rule) => !in_array($rule, $handlers, true)
+        ));
+
+        return $this;
+    }
+
+    /**
      * @param string $handler
      *
      * @return void
