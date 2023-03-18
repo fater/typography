@@ -66,16 +66,28 @@ class YourOwnRule extends Rule
     }
 }
 ```
+### if you want to use default rules with your rule
 
 Add your rule to the list of handlers to use it:
 ```php
 <?php
 
-use Fater\Typography\Src\Typography;
 use Fater\Typography\Src\TypographyRules;
 
-// Add your rule to rules instance
 $rules = TypographyRules::init()->addRules([YourOwnRule::class]);
+```
+
+### if you want to use only your rule
+
+At the beginning clear all rules list, add your rule to the list of handlers to use it:
+```php
+<?php
+
+use Fater\Typography\Src\TypographyRules;
+
+$rules = TypographyRules::init()
+    ->clearAll()
+    ->addRules([YourOwnRule::class]);
 
 $formattedText = Typography::init($rules) // Set rules instance with your rule
     ->apply('Hello');
@@ -103,7 +115,7 @@ The software version 0.x.x is still **under development**.
   - [ ] Remove spaces in the beginning/ending of paragraph
   - [ ] Remove redundant line breaks
 - Characters:
-  - [x] Replace special characters (c) (r) (tm) +- ([Rule examples in test](tests/Rules/Characters/ReplaceSpecialCharactersTest.php))
+  - [x] Replace special characters (c) (r) (tm) +- ...
   - [x] Replace dash
   - [X] First letter in uppercase
 
