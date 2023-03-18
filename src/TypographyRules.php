@@ -96,6 +96,7 @@ final class TypographyRules
      * @param string $handler
      *
      * @return void
+     *
      * @throws RuntimeException
      */
     private function checkRule(string $handler): void
