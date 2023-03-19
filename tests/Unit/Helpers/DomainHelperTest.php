@@ -23,4 +23,16 @@ class DomainHelperTest extends TestCase
     {
         $this->assertTrue(DomainHelper::isValidDomain($url));
     }
+
+    /**
+     * @dataProvider providerInvalid
+     *
+     * @param string $url
+     *
+     * @return void
+     */
+    public function testInvalidDomainSuccess(string $url): void
+    {
+        $this->assertFalse(DomainHelper::isValidDomain($url));
+    }
 }

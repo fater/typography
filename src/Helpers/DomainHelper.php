@@ -17,18 +17,25 @@ class DomainHelper
      */
     public static function isValidDomain(string $url): bool
     {
-        preg_match('/((https?:\/\/)?(www.)?)[\w-]+(\.)([^\s\/]{2,})([^\s]*)/U', $url, $matches);
+        preg_match('/^(https?:\/\/)?(www.)?([^\/]+)(.*)$/', $url, $matches);
         if (!isset($matches)) {
             return false;
         }
 
-        // Check found top domain zone in list of available domains
-        preg_match('/[^.]\w+$/U', $matches[5], $topLevelMatches);
-        if (
-            !isset($topLevelMatches)
-            || !array_key_exists($topLevelMatches[0], DomainDictionary::TOP_LEVEL_DOMAIN_ZONES)
-        ) {
+        $sections = array_reverse(explode('.', $matches[3]));
+        if (count($sections) < 2) {
             return false;
+        }
+
+        // Check found top domain zone in list of available domains and reverse array
+        if (!array_key_exists($sections[0], DomainDictionary::TOP_LEVEL_DOMAIN_ZONES)) {
+            return false;
+        }
+
+        for ($i = 1; $i < sizeof($sections); $i++) {
+            if (str_starts_with($sections[$i], '-') || str_ends_with($sections[$i], '-')) {
+                return false;
+            }
         }
 
         return true;
