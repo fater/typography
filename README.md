@@ -110,6 +110,7 @@ The software version 0.x.x is still **under development**.
 
 - Space:
   - [x] Add space after comma
+  - [x] Add space after dot (ignore domains) TODO: emails/IP
   - [x] Remove space before punctuation (.,:;?!)
   - [x] Remove space in each paragraph
   - [ ] Remove redundant line breaks
