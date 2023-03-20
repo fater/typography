@@ -54,6 +54,7 @@ If you want to make special formatting rules you can make class from base rule t
 ```php
 <?php
 
+use Fater\Typography\Src\Rules\Rule;
 use Your\Namespace\Rules;
 
 class YourOwnRule extends Rule
