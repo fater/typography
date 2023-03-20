@@ -9,6 +9,7 @@ use Fater\Typography\Src\Rules\Character\ReplaceDash;
 use Fater\Typography\Src\Rules\Character\ReplaceSpecialCharacters;
 use Fater\Typography\Src\Rules\Rule;
 use Fater\Typography\Src\Rules\Space\AddSpaceAfterComma;
+use Fater\Typography\Src\Rules\Space\AddSpaceAfterDot;
 use Fater\Typography\Src\Rules\Space\RemoveSpaceBeforePunctuation;
 use Fater\Typography\Src\Rules\Space\RemoveSpaceInEachParagraph;
 use RuntimeException;
@@ -19,14 +20,15 @@ final class TypographyRules
      * These rules are included by default
      */
     private array $rules = [
+        // Space:
+        AddSpaceAfterDot::class,
+        AddSpaceAfterComma::class,
+        RemoveSpaceBeforePunctuation::class,
+        RemoveSpaceInEachParagraph::class,
         // Character:
         FirstCapitalLetter::class,
         ReplaceDash::class,
         ReplaceSpecialCharacters::class,
-        // Space:
-        AddSpaceAfterComma::class,
-        RemoveSpaceBeforePunctuation::class,
-        RemoveSpaceInEachParagraph::class,
     ];
 
     /**
