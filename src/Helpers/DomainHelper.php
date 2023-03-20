@@ -29,7 +29,7 @@ class DomainHelper
         }
 
         // Check found top domain zone in list of available domains and reverse array
-        if (!array_key_exists($sections[0], DomainDictionary::TOP_LEVEL_DOMAIN_ZONES)) {
+        if (!in_array($sections[0], DomainDictionary::TOP_LEVEL_DOMAIN_ZONES)) {
             return false;
         }
 
