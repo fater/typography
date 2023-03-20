@@ -121,7 +121,7 @@ Hello World!
 
 # Changelog
 
-Read [CHANGELOG](CHANGELOG.md) to know all product changes.
+Read [Changelog in releases list](https://github.com/fater/typography/releases) to know all product changes.
 
 # License
 
