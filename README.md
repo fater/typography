@@ -7,7 +7,8 @@
 ![GitHub](https://img.shields.io/github/license/fater/typography)
 [![PHP Version Require](http://poser.pugx.org/fater/typography/require/php)](https://packagist.org/packages/fater/typography)
 
-"Typography" is a PHP software that automatically format your text, places spaces and corrects mechanical errors in the text. This software can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
+"Typography" is an open source PHP software that automatically can format your text. It can place spaces and correct mechanical errors in the text, replace characters and brackets.
+This software can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
 
 Using the "Typography" allows you to significantly reduce the time for correcting and formatting the text, since the service automatically processes all the necessary actions. In addition, "Typography" guarantees high accuracy and quality of correction, which helps to avoid punctuation errors.
 
@@ -31,7 +32,7 @@ This can be especially useful for professional writers, journalists, advertisers
 Install with composer:
 
 ```shell
-composer install fater/typography
+composer require fater/typography
 ```
 
 # Usage
@@ -53,7 +54,7 @@ If you want to make special formatting rules you can make class from base rule t
 ```php
 <?php
 
-use Fater\Typography\Src\Rules\Rule;
+use Your\Namespace\Rules;
 
 class YourOwnRule extends Rule
 {
@@ -74,6 +75,7 @@ Add your rule to the list of handlers to use it:
 <?php
 
 use Fater\Typography\Src\TypographyRules;
+use Your\Namespace\Rules\YourOwnRule;
 
 $rules = TypographyRules::init()->addRules([YourOwnRule::class]);
 
