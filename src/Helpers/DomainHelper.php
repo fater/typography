@@ -23,7 +23,8 @@ class DomainHelper
         }
 
         $sections = array_reverse(explode('.', $matches[3]));
-        if (count($sections) < 2) {
+        $countSections = count($sections);
+        if ($countSections < 2) {
             return false;
         }
 
@@ -32,7 +33,7 @@ class DomainHelper
             return false;
         }
 
-        for ($i = 1; $i < sizeof($sections); $i++) {
+        for ($i = 1; $i < $countSections; $i++) {
             if (str_starts_with($sections[$i], '-') || str_ends_with($sections[$i], '-')) {
                 return false;
             }
