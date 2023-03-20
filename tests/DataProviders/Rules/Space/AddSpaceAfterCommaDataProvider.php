@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Fater\Typography\Tests\DataProviders\Rules\Space;
 
-trait AddSpaceBeforeCommaDataProvider
+trait AddSpaceAfterCommaDataProvider
 {
     public function providerRule(): array
     {
