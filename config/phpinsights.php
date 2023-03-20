@@ -64,6 +64,7 @@ return [
         NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryStringConcatSniff::class,
         SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class,
         SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class,
         SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class,
@@ -72,9 +73,9 @@ return [
     ],
 
     'config' => [
-        //  ExampleInsight::class => [
-        //      'key' => 'value',
-        //  ],
+        NunoMaduro\PhpInsights\Domain\Insights\CyclomaticComplexityIsHigh::class => [
+            'maxComplexity' => 8,
+        ],
     ],
 
     /*

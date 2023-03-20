@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Fater\Typography\tests\Unit\Rules\Space;
 
-use Fater\Typography\Src\Rules\Space\AddSpaceAfterComma;
-use Fater\Typography\Tests\DataProviders\Rules\Space\AddSpaceAfterCommaDataProvider;
+use Fater\Typography\Src\Rules\Space\AddSpaceAfterDot;
+use Fater\Typography\Tests\DataProviders\Rules\Space\AddSpaceAfterDotDataProvider;
 use PHPUnit\Framework\TestCase;
 
-class AddSpaceAfterCommaTest extends TestCase
+class AddSpaceAfterDotTest extends TestCase
 {
-    use AddSpaceAfterCommaDataProvider;
+    use AddSpaceAfterDotDataProvider;
 
     /**
      * @dataProvider providerRule
@@ -22,7 +22,7 @@ class AddSpaceAfterCommaTest extends TestCase
      */
     public function testRule(string $initialText, string $expectedText): void
     {
-        $rule = new AddSpaceAfterComma();
+        $rule = new AddSpaceAfterDot();
         $result = $rule->handle($initialText);
 
         $this->assertEquals($expectedText, $result);
