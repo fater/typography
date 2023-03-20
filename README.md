@@ -7,7 +7,7 @@
 ![GitHub](https://img.shields.io/github/license/fater/typography)
 [![PHP Version Require](http://poser.pugx.org/fater/typography/require/php)](https://packagist.org/packages/fater/typography)
 
-"Typography" is a PHP software that automatically format your text, places spaces and corrects mechanical errors in the text. This service can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
+"Typography" is a PHP software that automatically format your text, places spaces and corrects mechanical errors in the text. This software can be useful for people who are engaged in the production and formatting of texts for public purposes, such as web pages, promotional materials, presentations, resumes, news, public posts, etc.
 
 Using the "Typography" allows you to significantly reduce the time for correcting and formatting the text, since the service automatically processes all the necessary actions. In addition, "Typography" guarantees high accuracy and quality of correction, which helps to avoid punctuation errors.
 
@@ -18,6 +18,7 @@ This can be especially useful for professional writers, journalists, advertisers
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Roadmap](#roadmap)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -35,7 +36,7 @@ composer install fater/typography
 
 # Usage
 
-To run "Typography" with default correction rules, use this code example:
+To run "Typography" with default formatting rules, use this code example:
 ```php
 <?php
 
@@ -46,7 +47,7 @@ $formattedText = Typography::init()->apply('Your text');
 echo $formattedText;
 ```
 
-## Use your own formatting rules
+## Create your own formatting rule
 
 If you want to make special formatting rules you can make class from base rule template:
 ```php
@@ -66,7 +67,7 @@ class YourOwnRule extends Rule
     }
 }
 ```
-### if you want to use default rules with your rule
+## Add your rule to default formatting rules
 
 Add your rule to the list of handlers to use it:
 ```php
@@ -75,9 +76,13 @@ Add your rule to the list of handlers to use it:
 use Fater\Typography\Src\TypographyRules;
 
 $rules = TypographyRules::init()->addRules([YourOwnRule::class]);
+
+// Text will be formatted with default list of rules including your rule
+$formattedText = Typography::init($rules) // Set rules instance with your rule
+    ->apply('Hello');
 ```
 
-### if you want to use only your rule
+## if you want to use only your rule
 
 At the beginning clear all rules list, add your rule to the list of handlers to use it:
 ```php
@@ -89,6 +94,7 @@ $rules = TypographyRules::init()
     ->clearAll()
     ->addRules([YourOwnRule::class]);
 
+// Text will be formatted only with your rule
 $formattedText = Typography::init($rules) // Set rules instance with your rule
     ->apply('Hello');
 
@@ -101,12 +107,6 @@ Hello World!
 ```
 
 ## Roadmap
-
-Current version is ![GitHub release](https://img.shields.io/github/v/release/fater/typography?display_name=release)
-
-The software version 0.x.x is still **under development**.
-
-### Status of rules:
 
 - Space:
   - [x] Add space after comma
