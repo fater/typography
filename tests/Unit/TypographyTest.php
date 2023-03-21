@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Fater\Typography\tests\Unit;
 
-use Fater\Typography\Src\Typography;
+use Fater\Typography\Typography;
 use PHPUnit\Framework\TestCase;
 
 class TypographyTest extends TestCase

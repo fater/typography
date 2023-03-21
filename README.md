@@ -41,7 +41,7 @@ To run "Typography" with default formatting rules, use this code example:
 ```php
 <?php
 
-use Fater\Typography\Src\Typography;
+use Fater\Typography\Typography;
 
 $formattedText = Typography::init()->apply('Your text');
 
@@ -54,7 +54,7 @@ If you want to make special formatting rules you can make class from base rule t
 ```php
 <?php
 
-use Fater\Typography\Src\Rules\Rule;
+use Fater\Typography\Rules\Rule;
 use Your\Namespace\Rules;
 
 class YourOwnRule extends Rule
@@ -75,7 +75,7 @@ Add your rule to the list of handlers to use it:
 ```php
 <?php
 
-use Fater\Typography\Src\TypographyRules;
+use Fater\Typography\TypographyRules;
 use Your\Namespace\Rules\YourOwnRule;
 
 $rules = TypographyRules::init()->addRules([YourOwnRule::class]);
@@ -91,7 +91,7 @@ At the beginning clear all rules list, add your rule to the list of handlers to 
 ```php
 <?php
 
-use Fater\Typography\Src\TypographyRules;
+use Fater\Typography\TypographyRules;
 
 $rules = TypographyRules::init()
     ->clearAll()
