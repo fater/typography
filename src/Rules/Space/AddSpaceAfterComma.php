@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Rules\Space;
+namespace Fater\Typography\Rules\Space;
 
-use Fater\Typography\Src\Rules\Rule;
+use Fater\Typography\Rules\Rule;
 
 /**
  * Add space after comma

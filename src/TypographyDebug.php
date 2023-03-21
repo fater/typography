@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src;
+namespace Fater\Typography;
 
-use Fater\Typography\Src\Rules\Rule;
+use Fater\Typography\Rules\Rule;
 
 class TypographyDebug extends Typography
 {

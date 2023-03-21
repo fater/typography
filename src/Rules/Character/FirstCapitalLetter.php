@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Rules\Character;
+namespace Fater\Typography\Rules\Character;
 
-use Fater\Typography\Src\Helpers\DomainHelper;
-use Fater\Typography\Src\Rules\Rule;
+use Fater\Typography\Helpers\DomainHelper;
+use Fater\Typography\Rules\Rule;
 
 /**
  * First capital letter

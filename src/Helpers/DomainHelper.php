@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Helpers;
+namespace Fater\Typography\Helpers;
 
-use Fater\Typography\Src\Dictionaries\DomainDictionary;
+use Fater\Typography\Dictionaries\DomainDictionary;
 
 class DomainHelper
 {

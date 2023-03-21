@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Fater\Typography\tests\Unit\Rules\Space;
 
-use Fater\Typography\Src\Rules\Space\RemoveSpaceInEachParagraph;
+use Fater\Typography\Rules\Space\RemoveSpaceInEachParagraph;
 use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceInEachParagraphDataProvider;
 use PHPUnit\Framework\TestCase;
 

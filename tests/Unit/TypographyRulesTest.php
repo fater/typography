@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Fater\Typography\tests\Unit;
 
-use Fater\Typography\Src\TypographyRules;
+use Fater\Typography\TypographyRules;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
