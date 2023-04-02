@@ -34,6 +34,7 @@ trait DomainHelperDataProvider
             ['-domain.com'],
             ['sub-.domain.t.com'],
             ['domain.invalid'],
+            ['htp://domain.com'],
         ];
     }
 }
