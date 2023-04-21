@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\tests\Unit;
+namespace Fater\Typography\Tests\Unit;
 
 use Fater\Typography\TypographyDebug;
 use Fater\Typography\TypographyRules;

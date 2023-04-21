@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\tests\Unit\Rules\Space;
+namespace Fater\Typography\Tests\Unit\Rules\Space;
 
 use Fater\Typography\Rules\Space\RemoveSpaceInEachParagraph;
 use Fater\Typography\Tests\DataProviders\Rules\Space\RemoveSpaceInEachParagraphDataProvider;

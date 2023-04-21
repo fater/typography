@@ -9,7 +9,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Fater\\Typography\\Tests\\DataProviders\\": "tests/DataProviders/"
+      "Fater\\Typography\\Tests\\": "tests/"
     }
   },
   "require": {
