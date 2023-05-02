@@ -17,8 +17,16 @@ class ReplaceDashTest extends TestCase
                 'sub — brand',
             ],
             [
+                'sub&nbsp;-&nbsp;brand',
+                'sub&nbsp;—&nbsp;brand',
+            ],
+            [
                 'between -7 and',
                 'between -7 and',
+            ],
+            [
+                '<img alt="super -&nbsp;user" src="."> - rules',
+                '<img alt="super —&nbsp;user" src="."> — rules',
             ],
         ];
     }
