@@ -4,12 +4,12 @@
   "name": "fater/typography",
   "autoload": {
     "psr-4": {
-      "Fater\\Typography\\Src\\": "src/"
+      "Fater\\Typography\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Fater\\Typography\\Tests\\DataProviders\\": "tests/DataProviders/"
+      "Fater\\Typography\\Tests\\": "tests/"
     }
   },
   "require": {

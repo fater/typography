@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\tests\Unit;
+namespace Fater\Typography\Tests\Unit;
 
-use Fater\Typography\Src\TypographyDebug;
-use Fater\Typography\Src\TypographyRules;
+use Fater\Typography\TypographyDebug;
+use Fater\Typography\TypographyRules;
 use PHPUnit\Framework\TestCase;
 
 class TypographyDebugTest extends TestCase

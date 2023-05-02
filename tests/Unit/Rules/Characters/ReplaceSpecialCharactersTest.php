@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\tests\Unit\Rules\Characters;
+namespace Fater\Typography\Tests\Unit\Rules\Characters;
 
-use Fater\Typography\Src\Rules\Character\ReplaceSpecialCharacters;
+use Fater\Typography\Rules\Character\ReplaceSpecialCharacters;
 use PHPUnit\Framework\TestCase;
 
 class ReplaceSpecialCharactersTest extends TestCase

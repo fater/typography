@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\tests\Unit\Rules\Space;
+namespace Fater\Typography\Tests\Unit\Rules\Space;
 
-use Fater\Typography\Src\Rules\Space\AddSpaceAfterDot;
+use Fater\Typography\Rules\Space\AddSpaceAfterDot;
 use Fater\Typography\Tests\DataProviders\Rules\Space\AddSpaceAfterDotDataProvider;
 use PHPUnit\Framework\TestCase;
 

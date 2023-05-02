@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Dictionaries;
+namespace Fater\Typography\Dictionaries;
 
 class DomainDictionary
 {

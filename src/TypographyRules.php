@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src;
+namespace Fater\Typography;
 
-use Fater\Typography\Src\Rules\Character\FirstCapitalLetter;
-use Fater\Typography\Src\Rules\Character\ReplaceDash;
-use Fater\Typography\Src\Rules\Character\ReplaceSpecialCharacters;
-use Fater\Typography\Src\Rules\Rule;
-use Fater\Typography\Src\Rules\Space\AddSpaceAfterComma;
-use Fater\Typography\Src\Rules\Space\AddSpaceAfterDot;
-use Fater\Typography\Src\Rules\Space\RemoveSpaceBeforePunctuation;
-use Fater\Typography\Src\Rules\Space\RemoveSpaceInEachParagraph;
+use Fater\Typography\Rules\Character\FirstCapitalLetter;
+use Fater\Typography\Rules\Character\ReplaceDash;
+use Fater\Typography\Rules\Character\ReplaceSpecialCharacters;
+use Fater\Typography\Rules\Rule;
+use Fater\Typography\Rules\Space\AddSpaceAfterComma;
+use Fater\Typography\Rules\Space\AddSpaceAfterDot;
+use Fater\Typography\Rules\Space\RemoveSpaceBeforePunctuation;
+use Fater\Typography\Rules\Space\RemoveSpaceInEachParagraph;
 use RuntimeException;
 
 final class TypographyRules

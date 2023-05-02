@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Fater\Typography\Tests\Unit\Helpers;
 
-use Fater\Typography\Src\Helpers\DomainHelper;
+use Fater\Typography\Helpers\DomainHelper;
 use Fater\Typography\Tests\DataProviders\Helpers\DomainHelperDataProvider;
 use PHPUnit\Framework\TestCase;
 

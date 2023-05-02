@@ -2,28 +2,43 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\Src\Rules\Character;
+namespace Fater\Typography\Rules\Character;
 
-use Fater\Typography\Src\Rules\Rule;
+use Fater\Typography\Helpers\DomainHelper;
+use Fater\Typography\Rules\Rule;
 
 /**
  * First capital letter
+ *
+ * Algorithm:
+ * - Separate each line with the template '. '
+ * - If the first word a valid domain/url,
+ *      will return non changed string
+ *      else convert the first letter to uppercase
  */
 class FirstCapitalLetter extends Rule
 {
     public function handle(string $text): string
     {
-        return preg_replace_callback(
-            '/([^.]*.)/',
-            static function ($matches) {
+        return implode('', array_map(
+            static function ($string) {
+                if (str_starts_with($string, '.')) {
+                    return $string;
+                }
+
+                preg_match('/^ *([^ ]*)/', $string, $matches);
+                if (DomainHelper::isValidDomain($matches[1])) {
+                    return $string;
+                }
+
                 return preg_replace_callback(
-                    '/([\w\p{Cyrillic}])/u',
+                    '/([^<\/][\w\p{Cyrillic}])/u',
                     static fn ($matchesFirstLetter) => mb_strtoupper($matchesFirstLetter[0]),
-                    $matches[0],
+                    $string,
                     1
                 );
             },
-            $text
-        );
+            preg_split('/(\. )/', $text, -1, PREG_SPLIT_DELIM_CAPTURE)
+        ));
     }
 }

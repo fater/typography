@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Fater\Typography\tests\Unit\Rules\Characters;
+namespace Fater\Typography\Tests\Unit\Rules\Characters;
 
-use Fater\Typography\Src\Rules\Character\ReplaceDash;
+use Fater\Typography\Rules\Character\ReplaceDash;
 use PHPUnit\Framework\TestCase;
 
 class ReplaceDashTest extends TestCase
@@ -17,8 +17,16 @@ class ReplaceDashTest extends TestCase
                 'sub — brand',
             ],
             [
+                'sub&nbsp;-&nbsp;brand',
+                'sub&nbsp;—&nbsp;brand',
+            ],
+            [
                 'between -7 and',
                 'between -7 and',
+            ],
+            [
+                '<img alt="super -&nbsp;user" src="."> - rules',
+                '<img alt="super —&nbsp;user" src="."> — rules',
             ],
         ];
     }
