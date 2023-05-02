@@ -14,8 +14,8 @@ class ReplaceDash extends Rule
     public function handle(string $text): string
     {
         return preg_replace(
-            '/( |&nbsp;)(-)( |&nbsp;)/',
-            '\1—\3',
+            '/( |&nbsp;)-( |&nbsp;)/',
+            '\1—\2',
             $text
         );
     }
