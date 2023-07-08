@@ -18,7 +18,7 @@ This can be especially useful for professional writers, journalists, advertisers
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage](#usage-examples)
 - [Roadmap](#roadmap)
 - [Changelog](#changelog)
 - [License](#license)
@@ -35,9 +35,9 @@ Install with composer:
 composer require fater/typography
 ```
 
-# Usage
+# Usage Examples
 
-To run "Typography" with default formatting rules, use this code example:
+To run "Typography" with default formatting rules use this code example:
 ```php
 <?php
 
@@ -75,6 +75,7 @@ Add your rule to the list of handlers to use it:
 ```php
 <?php
 
+use Fater\Typography\Typography;
 use Fater\Typography\TypographyRules;
 use Your\Namespace\Rules\YourOwnRule;
 
@@ -91,6 +92,7 @@ At the beginning clear all rules list, add your rule to the list of handlers to 
 ```php
 <?php
 
+use Fater\Typography\Typography;
 use Fater\Typography\TypographyRules;
 
 $rules = TypographyRules::init()
@@ -111,6 +113,8 @@ Hello World!
 
 ## Roadmap
 
+### v. 1.x
+
 - Space:
   - [x] Add space after comma
   - [x] Add space after dot (ignore domains) TODO: emails/IP
@@ -121,6 +125,10 @@ Hello World!
   - [x] Replace special characters (c), (r), (tm), +-, ..., <-, -> 
   - [x] Replace dash
   - [X] First letter in uppercase
+
+### v. 2.x
+
+Supports of formatting plain text and HTML code
 
 # Changelog
 
