@@ -937,8 +937,7 @@ class DomainDictionary
         'nrw',
         'ntt',
         'nu',
-        'nyc'
-            . ' Technology & Telecommunications',
+        'nyc',
         'nz',
         'obi',
         'observer',
