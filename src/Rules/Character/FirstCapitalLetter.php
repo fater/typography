@@ -32,7 +32,7 @@ class FirstCapitalLetter extends Rule
                 }
 
                 return preg_replace_callback(
-                    '/([^<\/][\w\p{Cyrillic}])/u',
+                    '/([\w\p{Cyrillic}])/u',
                     static fn ($matchesFirstLetter) => mb_strtoupper($matchesFirstLetter[0]),
                     $string,
                     1
